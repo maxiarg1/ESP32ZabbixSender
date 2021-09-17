@@ -1,5 +1,5 @@
-#ifndef _ESP8266ZABBIXSENDER_H_
-#define _ESP8266ZABBIXSENDER_H_
+#ifndef _ESP32ZabbixSender_H_
+#define _ESP32ZabbixSender_H_
 
 #if ARDUINO >= 100
 #include "Arduino.h"
@@ -7,14 +7,14 @@
 #include "WProgram.h"
 #endif
 
-#include <ESP8266WiFi.h>
-#define ZABBIXMAXLEN 256 // max 256byte packet
+#include <WiFi.h>
+#define ZABBIXMAXLEN 300 // max 256byte packet
 #define ZABBIXMAXITEM 50 // max 50 items
 #define ZABBIXTIMEOUT 1000 // 1000ms
 
-class ESP8266ZabbixSender {
+class ESP32ZabbixSender {
 public:
-	ESP8266ZabbixSender(void);
+	ESP32ZabbixSender(void);
 	void Init(IPAddress ZabbixServerAddr, uint16_t ZabbixServerPort, String ZabbixItemHostName);
 	int Send(void);
 	void ClearItem(void);
